@@ -1,5 +1,7 @@
 #include "stdafx.h"
 #include "Test.h"
+#include "Inputs.h"
+#include "Aimbot.h"
 #define _DEBUG
 
 void InitializeHotkeys()
@@ -14,15 +16,23 @@ void InitializeConsole()
 
 DWORD WINAPI MainThread(LPVOID base)
 {
+	Inputs::Initialize();
 	InitializeConsole();
 	InitializeHotkeys();
 
 	while (!GetAsyncKeyState(VK_END)) 
 	{
-		Sleep(100);
+		Sleep(1000/60);
 
-		if(GetAsyncKeyState(VK_F1))
-			Test::Run();
+		if (GetAsyncKeyState(VK_RBUTTON))
+			Aimbot::Run();
+
+		if (GetAsyncKeyState(VK_F1))
+		{
+			__try{ Test::Run(); }
+			__except (1) { std::cout << "[Error] in TEST" << std::endl; }
+			Sleep(250);
+		}
 	}
 
 	Beep(523, 250);

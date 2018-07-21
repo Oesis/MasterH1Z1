@@ -1,6 +1,6 @@
 #pragma once
 
-enum class Type
+enum class Types
 {
 	Player = 270,
 	Loot = 46,
@@ -12,7 +12,15 @@ enum class Type
 	Ammo = 21,
 	StuntGrenade = 178,
 	OtherGrenades = 174,
-	ClothesMedics = 44
+	ClothesMedics = 44,
+};
+
+enum class Stances
+{
+	Crouch = 1,
+	CrouchWalk = 5,
+	Prone = 6,
+	ProneMove = 7
 };
 
 

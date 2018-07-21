@@ -13,8 +13,53 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\math">
+    <Filter Include="Source Files\SDK">
+      <UniqueIdentifier>{d77ba5e9-0645-4a4b-80fd-8ec7315817e9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SDK\CGame">
+      <UniqueIdentifier>{b90c983d-f50d-4ca9-b5af-6b84043f2cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SDK\CGraphics">
+      <UniqueIdentifier>{c90a5f00-941e-4f18-8183-925bca47ac57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SDK">
+      <UniqueIdentifier>{1bda1f48-46c1-4950-8d2f-752c47b5cf07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SDK\CGame">
+      <UniqueIdentifier>{4e6363f3-10ab-49c9-bf53-49d01eb903a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SDK\CGraphics">
+      <UniqueIdentifier>{b6138fba-ea7c-4a1d-bdcb-79a5ef842cf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Misk">
+      <UniqueIdentifier>{c137ebdc-6b7b-46f1-938b-1ea881fc297f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SDK\CGame\CEntity">
+      <UniqueIdentifier>{0b5ad9e6-7515-4b41-af8f-205e83099d15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\SDK\CGame\CEntity">
+      <UniqueIdentifier>{69bce667-5656-4806-803f-f995b2c1c08d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Overlay">
+      <UniqueIdentifier>{e5bb4134-f323-4918-99dc-3c7be98a985d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Overlay">
+      <UniqueIdentifier>{bc26e5dc-5d1f-4ef5-bbca-0ea16a1b38c1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Math">
       <UniqueIdentifier>{2293561c-dae9-4bbc-84d3-642f64d5244f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Inputs">
+      <UniqueIdentifier>{24da8fa2-189b-474e-b9a6-efeb904d66ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Inputs">
+      <UniqueIdentifier>{1015bc77-b165-45e5-a3ff-1dcd3e6693ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Features">
+      <UniqueIdentifier>{5feb9360-f61d-4006-9f7f-6533c42f11e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Features">
+      <UniqueIdentifier>{a4beaada-ba85-42b2-a409-f48eaceeb956}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -23,6 +68,24 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CGame.cpp">
+      <Filter>Source Files\SDK\CGame</Filter>
+    </ClCompile>
+    <ClCompile Include="CGraphics.cpp">
+      <Filter>Source Files\SDK\CGraphics</Filter>
+    </ClCompile>
+    <ClCompile Include="CEntity.cpp">
+      <Filter>Source Files\SDK\CGame\CEntity</Filter>
+    </ClCompile>
+    <ClCompile Include="Overlay.cpp">
+      <Filter>Source Files\Overlay</Filter>
+    </ClCompile>
+    <ClCompile Include="Inputs.cpp">
+      <Filter>Source Files\Inputs</Filter>
+    </ClCompile>
+    <ClCompile Include="Aimbot.cpp">
+      <Filter>Source Files\Features</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -33,13 +96,37 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Vector3.h">
-      <Filter>Header Files\math</Filter>
+      <Filter>Header Files\Math</Filter>
     </ClInclude>
-    <ClInclude Include="StaticEnums.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="CGame.h">
+      <Filter>Header Files\SDK\CGame</Filter>
+    </ClInclude>
+    <ClInclude Include="CGraphics.h">
+      <Filter>Header Files\SDK\CGraphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Patchable.h">
+      <Filter>Header Files\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Macros.h">
+      <Filter>Header Files\Misk</Filter>
     </ClInclude>
     <ClInclude Include="EnumMacro.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Misk</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticEnums.h">
+      <Filter>Header Files\Misk</Filter>
+    </ClInclude>
+    <ClInclude Include="CEntity.h">
+      <Filter>Header Files\SDK\CGame\CEntity</Filter>
+    </ClInclude>
+    <ClInclude Include="Overlay.h">
+      <Filter>Header Files\Overlay</Filter>
+    </ClInclude>
+    <ClInclude Include="Inputs.h">
+      <Filter>Header Files\Inputs</Filter>
+    </ClInclude>
+    <ClInclude Include="Aimbot.h">
+      <Filter>Header Files\Features</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
