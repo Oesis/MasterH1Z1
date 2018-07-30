@@ -2,6 +2,7 @@
 #include "Test.h"
 #include "Inputs.h"
 #include "Aimbot.h"
+#include "D3D11Hooks.h"
 #define _DEBUG
 
 void InitializeHotkeys()
@@ -20,9 +21,13 @@ DWORD WINAPI MainThread(LPVOID base)
 	InitializeConsole();
 	InitializeHotkeys();
 
+	std::cout << "Wait to be in main menu to press a key" << std::endl;
+	system("pause");
+	D3D11::Initialize();
+
 	while (!GetAsyncKeyState(VK_END)) 
 	{
-		Sleep(1000/60);
+		Sleep(1000/80);
 
 		if (GetAsyncKeyState(VK_RBUTTON))
 			Aimbot::Run();
@@ -30,6 +35,13 @@ DWORD WINAPI MainThread(LPVOID base)
 		if (GetAsyncKeyState(VK_F1))
 		{
 			__try{ Test::Run(); }
+			__except (1) { std::cout << "[Error] in TEST" << std::endl; }
+			Sleep(250);
+		}
+
+		if (GetAsyncKeyState(VK_F2))
+		{
+			__try { Test::RunViewMatrix(); }
 			__except (1) { std::cout << "[Error] in TEST" << std::endl; }
 			Sleep(250);
 		}

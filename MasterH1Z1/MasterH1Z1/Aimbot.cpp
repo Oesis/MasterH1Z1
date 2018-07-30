@@ -6,15 +6,14 @@
 
 static float GetHeightFactor(CEntity* entity)
 {
-	float heightFactor = 1.0f;
 	switch (entity->m_stance)
 	{
-	case Stances::Crouch: heightFactor = 0.56f; break;
-	case Stances::CrouchWalk: heightFactor = 0.56f; break;
-	case Stances::Prone: heightFactor = 0; break;
-	case Stances::ProneMove: heightFactor = 0; break;
+	case Stances::Crouch: return 0.56f; break;
+	case Stances::CrouchWalk: return 0.56f; break;
+	case Stances::Prone: return 0; break;
+	case Stances::ProneMove: return 0; break;
+	default: return 1;
 	}
-	return heightFactor;
 }
 
 BestTarget Aimbot::GetBestTarget()
@@ -39,12 +38,13 @@ BestTarget Aimbot::GetBestTarget()
 
 		if (entityPos.DistToSqr(localPlayer->m_position) < 10 * 10)
 			velocityFactor = 0.04f;
-		Vector3 entityAimPosition = entityPos + Vector3(0, (PLAYER_HEIGHT + 0.05f) * heightFactor, 0) + entity->m_velocity * velocityFactor;
+		Vector3 entityAimPosition = entityPos + Vector3(0, PLAYER_HEIGHT * heightFactor, 0) + (entity->m_velocity * velocityFactor);
 		if (CGraphics::WorldToScreen(&toHead, entityAimPosition))
 		{
 			float distTemp = toHead.DistTo(Vector3(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2, 0));
-			if (/*distTemp < 300 && */distTemp < bestAngleLenght)
+			if (distTemp < 80 && distTemp < bestAngleLenght)
 			{
+				//std::cout << "Aim to :" << toHead.x << ", " << toHead.y << std::endl;
 				bestAngleLenght = distTemp;
 				bestTarget.entity = entity;
 				bestTarget.screenPosition = toHead;
@@ -63,14 +63,14 @@ void Aimbot::Run()
 
 	BestTarget bestTarget = GetBestTarget();
 	if (!bestTarget.entity) {
-		std::cout << "[BestTarget] NULL" << std::endl;
+		//std::cout << "[BestTarget] NULL" << std::endl;
 
 		return;
 	}
 
-	Inputs::MoveMouse((int)bestTarget.screenPosition.x, (int)bestTarget.screenPosition.y);
+	Inputs::MoveMouse((int)bestTarget.screenPosition.x - SCREEN_WIDTH / 2, (int)bestTarget.screenPosition.y - SCREEN_HEIGHT / 2);
 
-	std::cout << "[BestTarget]" << bestTarget.entity->m_name << std::endl;
-	std::cout << "Moving mouse to :" << bestTarget.screenPosition.x << ", " << bestTarget.screenPosition.y << std::endl;
+	//std::cout << "[BestTarget]" << bestTarget.entity->m_name << std::endl;
+	//std::cout << "Moving mouse to :" << bestTarget.screenPosition.x << ", " << bestTarget.screenPosition.y << std::endl;
 }
 

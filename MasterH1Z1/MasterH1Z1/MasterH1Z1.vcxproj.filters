@@ -40,12 +40,6 @@
     <Filter Include="Header Files\SDK\CGame\CEntity">
       <UniqueIdentifier>{69bce667-5656-4806-803f-f995b2c1c08d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Overlay">
-      <UniqueIdentifier>{e5bb4134-f323-4918-99dc-3c7be98a985d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Overlay">
-      <UniqueIdentifier>{bc26e5dc-5d1f-4ef5-bbca-0ea16a1b38c1}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\Math">
       <UniqueIdentifier>{2293561c-dae9-4bbc-84d3-642f64d5244f}</UniqueIdentifier>
     </Filter>
@@ -60,6 +54,18 @@
     </Filter>
     <Filter Include="Header Files\Features">
       <UniqueIdentifier>{a4beaada-ba85-42b2-a409-f48eaceeb956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Render">
+      <UniqueIdentifier>{f8a50e6e-c60d-4837-abcb-6370d2c4c73c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Render">
+      <UniqueIdentifier>{b6ead1f0-3d23-484d-9df7-02cb576c386f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Imgui">
+      <UniqueIdentifier>{0649acce-25c3-421c-956a-a96365e6e82c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Imgui">
+      <UniqueIdentifier>{cd7d4a78-f1a5-42f2-892c-724246d8ab3a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -78,14 +84,26 @@
     <ClCompile Include="CEntity.cpp">
       <Filter>Source Files\SDK\CGame\CEntity</Filter>
     </ClCompile>
-    <ClCompile Include="Overlay.cpp">
-      <Filter>Source Files\Overlay</Filter>
-    </ClCompile>
     <ClCompile Include="Inputs.cpp">
       <Filter>Source Files\Inputs</Filter>
     </ClCompile>
     <ClCompile Include="Aimbot.cpp">
       <Filter>Source Files\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="D3D11Hooks.cpp">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Visuals.cpp">
+      <Filter>Source Files\Features</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui.cpp">
+      <Filter>Source Files\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui_draw.cpp">
+      <Filter>Source Files\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Imgui\imgui_impl_dx11.cpp">
+      <Filter>Source Files\Imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -119,14 +137,47 @@
     <ClInclude Include="CEntity.h">
       <Filter>Header Files\SDK\CGame\CEntity</Filter>
     </ClInclude>
-    <ClInclude Include="Overlay.h">
-      <Filter>Header Files\Overlay</Filter>
-    </ClInclude>
     <ClInclude Include="Inputs.h">
       <Filter>Header Files\Inputs</Filter>
     </ClInclude>
     <ClInclude Include="Aimbot.h">
       <Filter>Header Files\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="D3D11Hooks.h">
+      <Filter>Header Files\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="Visuals.h">
+      <Filter>Header Files\Features</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\cx_fnv1.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\cx_pcg32.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\cx_strenc.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imconfig.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui_impl_dx11.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\imgui_internal.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\stb_rect_pack.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\stb_textedit.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\stb_truetype.h">
+      <Filter>Header Files\Imgui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -39,6 +39,15 @@ D3DXMATRIX CGraphics::GetGameMatrix()
 	return gameMatrix;
 }
 
+D3DXMATRIX CGraphics::GetCameraMatrix()
+{
+	CheckPointer();
+	CCamera* cCamera = *reinterpret_cast<CCamera**>(_cGraphicsPointer + (uint)Offsets::CGraphics::CCamera);
+	if (!cCamera || !cCamera->cCameraMatrix)
+		return D3DXMATRIX();
+	return cCamera->cCameraMatrix->m_viewMatrix;
+}
+
 bool CGraphics::WorldToScreen(Vector3 * ScreenPos, Vector3 WorldPosition)
 {
 	D3DXMATRIX gameMatrix = GetGameMatrix();
@@ -63,5 +72,6 @@ bool CGraphics::WorldToScreen(Vector3 * ScreenPos, Vector3 WorldPosition)
 
 	ScreenPos->x = x;
 	ScreenPos->y = y;
+	ScreenPos->z = 0;
 	return true;
 }

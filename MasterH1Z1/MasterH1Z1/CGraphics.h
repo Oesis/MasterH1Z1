@@ -23,6 +23,7 @@ class CGraphics
 {
 public:
 	static D3DXMATRIX GetGameMatrix();
+	static D3DXMATRIX GetCameraMatrix();
 	static bool WorldToScreen(Vector3* ScreenPos, Vector3 WorldPosition);
 private:
 	static void CheckPointer();

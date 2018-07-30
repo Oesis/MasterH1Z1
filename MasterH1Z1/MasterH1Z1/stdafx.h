@@ -22,10 +22,20 @@
 #include "Macros.h"
 #include "StaticEnums.h"
 
-#include <d3d9.h>
-#include <d3dx9.h>
+#include <d3dx9math.h>
+//#include <d3d9.h>
+//#include <d3dx9.h>
+//#include <d3d11.h>
+//#include <d3dcompiler.h>
 
-#pragma comment( lib, "d3d9.lib" )
-#pragma comment( lib, "d3dx9.lib" )
+//#pragma comment( lib, "d3d9.lib" )
+//#pragma comment( lib, "d3dx9.lib" )
+#pragma comment(lib, "d3d11.lib")
+#pragma comment(lib, "d3dcompiler.lib")
+//#pragma comment(lib, "d3dx11.lib")
+
+#include <detours.h>
+#pragma comment( lib, "detours.lib" )
+
 
 typedef unsigned int uint;

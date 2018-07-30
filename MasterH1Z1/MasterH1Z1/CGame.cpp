@@ -29,7 +29,7 @@ std::vector<CEntity*> CGame::GetEntities()
 	if (!firstObject)
 		return allEntities;
 
-	allEntities.push_back(firstObject);
+	//allEntities.push_back(firstObject);
 	for (CEntity* entity = firstObject->m_nextEntity; entity != nullptr; entity = entity->m_nextEntity)
 	{
 		allEntities.push_back(entity);

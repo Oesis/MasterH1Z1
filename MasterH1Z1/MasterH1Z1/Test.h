@@ -28,6 +28,22 @@ static std::vector<CEntity*> GetEntities()
 
 namespace Test
 {
+
+	static void RunViewMatrix()
+	{
+		std::cout << "\n-----------------" << std::endl;
+		D3DXMATRIX viewMatrix = CGraphics::GetCameraMatrix();
+
+		std::cout << "[ViewMatrix] : " << std::endl;
+		std::cout << std::fixed << std::setprecision(3);
+		for (uint i = 0; i < 4; ++i)
+		{
+			std::cout << viewMatrix.m[i][0] << ", " <<
+				viewMatrix.m[i][1] << ", " <<
+				viewMatrix.m[i][2] << ", " <<
+				viewMatrix.m[i][3] << std::endl;
+		}
+	}
 	static void Run()
 	{
 		printf("h1z1.exe base address : %10X \n", GetModuleHandle(NULL));
@@ -52,7 +68,7 @@ namespace Test
 		std::cout << ", " << pLocalPlayer->cPlayerBase->m_position.y;
 		std::cout << ", " << pLocalPlayer->cPlayerBase->m_position.z << std::endl;
 
-		std::vector<CEntity*> allEntities = GetEntities();
+		std::vector<CEntity*> allEntities = CGame::GetEntities();
 		std::cout << "Found " << allEntities.size() << " valid entities " << std::endl;
 		for (auto entity : allEntities)
 		{
@@ -67,13 +83,18 @@ namespace Test
 				entity->m_position.y << ", " <<
 				entity->m_position.z << ", " <<
 				std::endl;
+			Vector3 toScreen;
+			if(CGraphics::WorldToScreen(&toScreen, entity->m_position))
+				std::cout << "[NextObject] (In Screen Position) : " <<
+				toScreen.x << ", " <<
+				toScreen.y << std::endl;
 
 			std::cout << "-----------------" << std::endl;
 		}
 
 
 		std::cout << "\n-----------------" << std::endl;
-		D3DXMATRIX viewMatrix = CGraphics::GetGameMatrix();
+		D3DXMATRIX viewMatrix = CGraphics::GetCameraMatrix();
 		printf("CGraphics pointer : %10X \n", pCGame);
 
 		std::cout << "[ViewMatrix] : " << std::endl;

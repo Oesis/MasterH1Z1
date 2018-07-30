@@ -1,11 +1,11 @@
 #pragma once
 
 #ifndef oCGame
-#define oCGame		0x1446E11A0
+#define oCGame		0x1446E5240
 #endif
 
 #ifndef oCGraphics
-#define oCGraphics	0x1446E2668
+#define oCGraphics	0x1446E6708
 #endif
 
 namespace Offsets
