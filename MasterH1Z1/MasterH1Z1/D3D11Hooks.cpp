@@ -6,13 +6,6 @@
 #include "ImGui\imgui_impl_dx11.h"
 
 #include "Visuals.h"
-//#include <d3dcompiler.h>
-
-//#pragma comment( lib, "d3d9.lib" )
-//#pragma comment( lib, "d3dx9.lib" )
-//#pragma comment(lib, "d3d11.lib")
-//#pragma comment(lib, "d3dcompiler.lib")
-//#pragma comment(lib, "d3dx11.lib")
 
 bool doInit = true;
 
@@ -108,6 +101,7 @@ namespace D3D11
 
 			ImGui_ImplDX11_Init(hWindow, pDevice, pContext);
 			ImGui_ImplDX11_CreateDeviceObjects();
+			Visuals::Initialize();
 		}
 
 		pContext->OMSetRenderTargets(1, &pRenderTargetView, NULL);

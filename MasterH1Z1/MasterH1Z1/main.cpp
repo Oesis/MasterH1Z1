@@ -18,19 +18,19 @@ void InitializeConsole()
 DWORD WINAPI MainThread(LPVOID base)
 {
 	Inputs::Initialize();
-	InitializeConsole();
+	//InitializeConsole();
 	InitializeHotkeys();
 
-	std::cout << "Wait to be in main menu to press a key" << std::endl;
-	system("pause");
+	//std::cout << "Wait to be in main menu to press a key" << std::endl;
+	//system("pause");
+	Sleep(10000);
 	D3D11::Initialize();
 
 	while (!GetAsyncKeyState(VK_END)) 
 	{
-		Sleep(1000/80);
+		Sleep(1000 / 100);
 
-		if (GetAsyncKeyState(VK_RBUTTON))
-			Aimbot::Run();
+		Aimbot::Run();
 
 		if (GetAsyncKeyState(VK_F1))
 		{

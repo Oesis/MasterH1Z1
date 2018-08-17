@@ -64,9 +64,9 @@ namespace Test
 		std::cout << "Stance : " << ENUM_MACRO::as_integer(pLocalPlayer->m_stance) << std::endl;
 
 		std::cout << "Position : ";
-		std::cout << pLocalPlayer->cPlayerBase->m_position.x;
-		std::cout << ", " << pLocalPlayer->cPlayerBase->m_position.y;
-		std::cout << ", " << pLocalPlayer->cPlayerBase->m_position.z << std::endl;
+		std::cout << pLocalPlayer->cPlayerBase->m_pelvisPosition.x;
+		std::cout << ", " << pLocalPlayer->cPlayerBase->m_pelvisPosition.y;
+		std::cout << ", " << pLocalPlayer->cPlayerBase->m_pelvisPosition.z << std::endl;
 
 		std::vector<CEntity*> allEntities = CGame::GetEntities();
 		std::cout << "Found " << allEntities.size() << " valid entities " << std::endl;

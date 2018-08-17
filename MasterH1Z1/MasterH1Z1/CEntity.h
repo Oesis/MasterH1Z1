@@ -4,15 +4,23 @@
 #include "StaticEnums.h"
 #include "Vector3.h"
 
+#include <d3d9.h>
+#include <d3dx9.h>
+#include <d3dx9math.h>
+#pragma comment(lib, "d3dx9.lib")
+
+#include "CSkeleton.h"
+
 #define PLAYER_HEIGHT 1.6f
 
 #pragma region STRUCTS
 class CPlayerBase
 {
 public:
-	char pad_0000[1008]; //0x0000
-	Vector3 m_position; //0x03F0
-	char pad_03FC[80]; //0x03FC
+	char pad_0000[0x3A8]; //0x0000
+	Vector3 m_position; //0x03A8
+	char pad_0x3B4[0x3C]; //0x03B4
+	Vector3 m_pelvisPosition; //0x03F0
 }; //Size: 0x044C
 
 class CActor
@@ -20,7 +28,9 @@ class CActor
 public:
 	char pad_0000[24]; //0x0000
 	uint32_t m_isInCar; //0x0018
-}; //Size: 0x0020
+	char pad_001C[564]; //0x001C
+	class CStart* cStart; //0x0250
+}; //Size: 0x0258
 
 class CHealthBase
 {
@@ -62,6 +72,10 @@ public:
 	bool IsLootItem();
 
 	int GetHealth();
+
+	Vector3 GetHeadPositionFixed();
+	Vector3 GetBonePosition(Bone, bool fixed = true);
+	Vector3 GetBoneFixed(Vector3 bonePosition);
 
 }; //Size: 0x4054
 

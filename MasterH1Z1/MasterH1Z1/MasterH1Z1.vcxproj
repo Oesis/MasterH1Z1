@@ -126,6 +126,7 @@
     <ClCompile Include="CEntity.cpp" />
     <ClCompile Include="CGame.cpp" />
     <ClCompile Include="CGraphics.cpp" />
+    <ClCompile Include="CSkeleton.cpp" />
     <ClCompile Include="D3D11Hooks.cpp" />
     <ClCompile Include="Imgui\imgui.cpp" />
     <ClCompile Include="Imgui\imgui_draw.cpp" />
@@ -140,6 +141,7 @@
     <ClInclude Include="CEntity.h" />
     <ClInclude Include="CGame.h" />
     <ClInclude Include="CGraphics.h" />
+    <ClInclude Include="CSkeleton.h" />
     <ClInclude Include="D3D11Hooks.h" />
     <ClInclude Include="EnumMacro.h" />
     <ClInclude Include="Imgui\cx_fnv1.h" />
@@ -149,6 +151,7 @@
     <ClInclude Include="Imgui\imgui.h" />
     <ClInclude Include="Imgui\imgui_impl_dx11.h" />
     <ClInclude Include="Imgui\imgui_internal.h" />
+    <ClInclude Include="Imgui\Rubik.h" />
     <ClInclude Include="Imgui\stb_rect_pack.h" />
     <ClInclude Include="Imgui\stb_textedit.h" />
     <ClInclude Include="Imgui\stb_truetype.h" />

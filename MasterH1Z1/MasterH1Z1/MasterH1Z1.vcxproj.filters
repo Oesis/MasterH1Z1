@@ -67,6 +67,12 @@
     <Filter Include="Source Files\Imgui">
       <UniqueIdentifier>{cd7d4a78-f1a5-42f2-892c-724246d8ab3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SDK\CGame\CEntity\CSkeleton">
+      <UniqueIdentifier>{010fa67e-4bf7-4acd-91cf-9c3b075f9d88}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SDK\CGame\CEntity\CSkeleton">
+      <UniqueIdentifier>{8f83e3d7-8e8c-403f-86e3-a366656a23a9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -104,6 +110,9 @@
     </ClCompile>
     <ClCompile Include="Imgui\imgui_impl_dx11.cpp">
       <Filter>Source Files\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="CSkeleton.cpp">
+      <Filter>Source Files\SDK\CGame\CEntity\CSkeleton</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -178,6 +187,12 @@
     </ClInclude>
     <ClInclude Include="Imgui\stb_truetype.h">
       <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Imgui\Rubik.h">
+      <Filter>Header Files\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="CSkeleton.h">
+      <Filter>Header Files\SDK\CGame\CEntity\CSkeleton</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
