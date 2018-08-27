@@ -75,15 +75,15 @@ Vector3 CEntity::GetBonePosition(Bone boneID, bool fixed)
 	auto bone = skeleton->cBone;
 	if (!bone) return Vector3(0, 0, 0);
 
-	Vector3 bonePosition = *reinterpret_cast<Vector3*>(bone + (boneID * 0xC));
+	Vector3 bonePosition = *reinterpret_cast<Vector3*>((DWORD64)bone + (DWORD64)(boneID * 12));
 
 	if (fixed)
-		bonePosition = GetBoneFixed(bonePosition);
+		GetBoneFixed(bonePosition);
 
 	return bonePosition;
 }
 
-Vector3 CEntity::GetBoneFixed(Vector3 bonePosition)
+void CEntity::GetBoneFixed(Vector3& bonePosition)
 {
 	D3DXVECTOR3 dxBonePosition = D3DXVECTOR3(bonePosition.x, bonePosition.y, bonePosition.z);
 
@@ -93,5 +93,5 @@ Vector3 CEntity::GetBoneFixed(Vector3 bonePosition)
 	D3DXVECTOR3 boneFixed;
 	D3DXVec3TransformCoord(&boneFixed, &dxBonePosition, &RotateY);
 
-	return Vector3(boneFixed.x, boneFixed.y, boneFixed.z);
+	bonePosition = Vector3(boneFixed.x, boneFixed.y, boneFixed.z);
 }

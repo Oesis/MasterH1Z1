@@ -75,7 +75,7 @@ public:
 
 	Vector3 GetHeadPositionFixed();
 	Vector3 GetBonePosition(Bone, bool fixed = true);
-	Vector3 GetBoneFixed(Vector3 bonePosition);
+	void GetBoneFixed(Vector3& bonePosition);
 
 }; //Size: 0x4054
 

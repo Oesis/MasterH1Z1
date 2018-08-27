@@ -3,6 +3,8 @@
 #include "ImGui\imgui_internal.h"
 #include "ImGui\imgui_impl_dx11.h"
 #include "Vector3.h"
+#include "CSkeleton.h"
+#include <vector>
 
 class CEntity;
 
