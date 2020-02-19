@@ -12,3 +12,4 @@ H1Z1 private C++ internal Hack
 
 # Video
 - [Hack Showcase](https://www.youtube.com/watch?v=OQXj2s-iH3U)
+- [Funny Video](https://youtu.be/DYUhfEsEszk)
